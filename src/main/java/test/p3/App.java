@@ -1,0 +1,16 @@
+package test.p3;
+
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import test.p3.config.ContextConfiguration;
+import test.p3.service.DependentService;
+
+public final class App {
+    public static void main(final String[] args) {
+        ApplicationContext context =
+                new AnnotationConfigApplicationContext(ContextConfiguration.class);
+        DependentService dependent = context.getBean(DependentService.class);
+
+        System.out.println(dependent.process());
+    }
+}
