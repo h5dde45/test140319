@@ -11,5 +11,6 @@ public final class App {
                 new AnnotationConfigApplicationContext(SpringConfig.class);
         AmbiguousAutowiredFine bean = context.getBean(AmbiguousAutowiredFine.class);
         System.out.println(bean.getFine());
+
     }
 }
